@@ -4,7 +4,7 @@ const passport = require("passport");
 /* GET home page. */
 //FIX: will have to adjust this route to relate with my project
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: "Alberto's Bakery" });
 });
 
 // Google OAuth login route
