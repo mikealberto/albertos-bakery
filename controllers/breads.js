@@ -1,4 +1,4 @@
-//Still have to require bread model
+const Bread = require("../models/bread");
 
 module.exports = {index};
 
