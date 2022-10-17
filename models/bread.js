@@ -1,0 +1,23 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const reviewSchema = new mongoose.Schema({
+    content: String,
+    rating: {type: String, min: 1, max: 5, default: 5}
+}, {
+    timestamps: true
+})
+
+const breadSchema = new Schema(
+    {
+        name: String,
+        Description: String,
+        Ingredients: String,
+        reviews: [reviewSchema]
+    },
+    {
+        timestamps: true,
+    }
+);
+
+module.exports = mongoose.model("Bread", breadSchema);
