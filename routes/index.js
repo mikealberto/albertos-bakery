@@ -26,15 +26,17 @@ router.get("/oauth2callback", passport.authenticate(
   "google",
   {
     //EXPERIMENT:
-    successRedirect: '/breads',
-    failureRedirect: "/breads"
+    successRedirect: "/breads",
+    failureRedirect: "/"
   }
 ));
 
 // OAuth Logout Route
-router.get("/logout", function(req, res) {
-  req.logout();
-  res.redirect("/movies");
+router.get("/logout", function(req, res, next) {
+  req.logout(function(err) {
+    if (err) return next (err)
+    res.redirect("/");
+  });
 });
 
 

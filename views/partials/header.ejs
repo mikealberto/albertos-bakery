@@ -12,8 +12,12 @@
         <a href="/" <%- title === "Alberto's Bakery" ? 'class="active"' : '' %> ><img src="/images/ab-logo-01 Small.png" id="img-ab-logo"></a>
         <a href="/breads" <%- title === "Breads" ? 'class="active"' : '' %> >Breads</a>
         <a href="">About</a>
-        <a href="">Log In</a>
-        <a href="">Register</a>
+        <% if (user) { %> 
+            <a href="/logout">Log Out</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google-logo"></a>
+            <a href="">Register</a>
+        <% } %>
     </nav>
     <main>
         <h1><%= title %></h1>
