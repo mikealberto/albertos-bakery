@@ -8,22 +8,35 @@ router.get('/', function(req, res, next) {
 });
 
 // Google OAuth login route
-//when the link gets push in your page it will trigger this reques
+//when the link gets push in your page it will trigger this request
 router.get("/auth/google", passport.authenticate(
   "google", 
   {
     scope: ['profile', 'email'],
-    //to optionally force pick account every time
+
+    //if you already consented once you won't receive account prompt
+    //so to optionally force pick account every time
     prompt: "select_account"
   }
 ));
 
-// //Google OAuth Callback route
-// router.get("/oauth2callback", passport.authenticate(
-//   "google", 
-//   {
-//     successRedirect: 
-//   }
-// ));
+//Google OAuth Callback route
+//After the user has consented google needs to know which route on our server to hit with the resources 
+router.get("/oauth2callback", passport.authenticate(
+  "google",
+  {
+    //EXPERIMENT:
+    successRedirect: '/breads',
+    failureRedirect: "/breads"
+  }
+));
+
+// OAuth Logout Route
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/movies");
+});
+
+
 
 module.exports = router; 

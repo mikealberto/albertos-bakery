@@ -34,6 +34,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//mount custom middleware 
+//if there is a logged in user we will store the users document 
+// if not we store a falsy value
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
 app.use('/', indexRouter);
 app.use("/breads", breadsRouter);
 
