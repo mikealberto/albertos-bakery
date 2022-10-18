@@ -1,6 +1,6 @@
 const Bread = require("../models/bread");
 
-module.exports = {index};
+module.exports = {index, show};
 
 function index (req, res) {
     Bread.find({})
@@ -11,5 +11,16 @@ function index (req, res) {
             console.log(err);
             process.exit();
         });
+};
+
+function show (req, res) {
+    Bread.findById(req.params.id)
+        .then(function(bread) {
+            res.render("breads/show", {title: `${bread.name}`, bread});
+        })
+        .catch(function(err) {
+            console.log(err);
+            process.exit();
+        }); 
 
 };
