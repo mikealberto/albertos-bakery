@@ -1,0 +1,50 @@
+<%- include("../partials/header") %> 
+
+<section id="show-page">
+    <div><h2>DESCRIPTION</h2></div>
+    <div><%= bread.description %> </div>
+    <div><h2>INGREDIENTS</h2></div>
+    <div><%= bread.ingredients %> </div>
+</section>
+
+<h2>Reviews</h2>
+
+<% if (!user) { %>
+    <form action="/bread/<%= bread._id %>/reviews " id="add-review-form" method="POST">
+        <label>Review: </label>
+        <textarea name="content"></textarea>
+        <br>
+        <label>Rating: </label>
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+        </select>
+        <input type="submit" value="Add Review">
+    </form>
+<% } %> 
+
+<br>
+
+if (bread.reviews.length) {
+    <table>
+        <thead>
+            <tr>
+                <th>Reviewer</th>
+                <th>Date</th>
+                <th>Review</th>
+                <th>Rating</th>
+                <!-- colm to delete review -->
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+} else {
+    <h5>No Reviews.</h5>
+}
+
+
+<%- include("../partials/footer") %> 
