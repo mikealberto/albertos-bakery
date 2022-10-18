@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const methodOverride = require("method-override");
 const session = require("express-session");
 const passport = require("passport");
+const methodOverride = require("method-override");
 
 require("dotenv").config()
 
@@ -26,6 +26,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//you want to make sure you get all of your request before you initiate any actions 
+app.use(methodOverride("_method"));
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
@@ -34,7 +36,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride("_method"));
 
 //mount custom middleware 
 //if there is a logged in user we will store the users document 
