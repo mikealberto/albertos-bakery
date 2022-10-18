@@ -1,2 +1,19 @@
 <%- include("../partials/header"); %> 
+<table>
+    <thead>
+        <tr>
+            <th>Bread Names:</th>
+            <!-- for more info -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% breads.forEach(function(bread) { %>
+            <tr><%=bread.name%></tr>
+            <tr><a>Learn More</a></tr>
+        <% }); %>
+    </tbody>
+</table>
+
 <%- include("../partials/footer"); %> 
+
