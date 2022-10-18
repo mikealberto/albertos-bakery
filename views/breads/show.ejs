@@ -10,8 +10,7 @@
 <h2>Reviews</h2>
 
 
-<!-- FIX -->
-<% if (!user) { %>
+<% if (user) { %>
     <form action="/breads/<%= bread._id %>/reviews" id="add-review-form" method="POST">
         <label>Review: </label>
         <textarea name="content"></textarea>
