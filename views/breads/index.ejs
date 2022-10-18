@@ -9,8 +9,10 @@
     </thead>
     <tbody>
         <% breads.forEach(function(bread) { %>
-            <tr><%=bread.name%></tr>
-            <tr><a>Learn More</a></tr>
+            <tr>
+                <td><%=bread.name%></td>
+                <td><a href="/breads/<%= bread._id %> ">Learn More</a></td>
+            </tr>
         <% }); %>
     </tbody>
 </table>
