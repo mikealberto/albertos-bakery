@@ -14,8 +14,8 @@ const reviewSchema = new mongoose.Schema({
 const breadSchema = new Schema(
     {
         name: String,
-        Description: String,
-        Ingredients: String,
+        description: String,
+        ingredients: String,
         reviews: [reviewSchema]
     },
     {
