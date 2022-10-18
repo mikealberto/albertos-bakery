@@ -6,6 +6,10 @@ const isLoggedIn = require("../config/auth");
 
 //All routes initiate with /breads 
 
+//index functionality 
 router.get("/", breadsCtrl.index);
+
+//show functionality
+router.get("/:id", breadsCtrl.show);
 
 module.exports = router;
