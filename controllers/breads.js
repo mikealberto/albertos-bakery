@@ -22,5 +22,4 @@ function show (req, res) {
             console.log(err);
             process.exit();
         }); 
-
 };

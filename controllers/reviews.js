@@ -38,3 +38,7 @@ async function deleteReview(req, res) {
         process.exit();
     }
 }
+
+function edit (req, res) {
+    res.render("breads/edit")
+}
