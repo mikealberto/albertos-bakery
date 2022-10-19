@@ -1,7 +1,7 @@
 const Bread = require("../models/bread");
 
 module.exports = {
-    create
+    create, delete: deleteReview
 }
 
 function create(req, res) {
@@ -19,4 +19,22 @@ function create(req, res) {
             console.log(err);
             process.exit();
         });
+}
+
+async function deleteReview(req, res) {
+    try {
+        const bread = await Bread.findOne({
+            "reviews._id" : req.params.id,
+            "reviews.user": req.user._id
+        })
+        console.log(bread);
+        //if statement true if bread is undefined
+        if(!bread) return res.redirect("/breads");
+        bread.reviews.remove(req.params.id);
+        await bread.save();
+        res.redirect(`/breads/${bread._id}`);
+    } catch (err) {
+        console.log(err);
+        process.exit();
+    }
 }
