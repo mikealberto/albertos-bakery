@@ -12,4 +12,8 @@ router.get("/", breadsCtrl.index);
 //show functionality
 router.get("/:id", breadsCtrl.show);
 
+//edit functionality
+//isLoggedIn for that extra layer of security
+router.get("/:id/edit", isLoggedIn, breadsCtrl.edit);
+
 module.exports = router;
