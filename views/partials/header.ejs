@@ -11,7 +11,6 @@
     <nav>
         <a href="/" <%- title === "Alberto's Bakery" ? 'class="active"' : '' %> ><img src="/images/ab-logo-01 Small.png" id="img-ab-logo"></a>
         <a href="/breads" <%- title === "Breads" ? 'class="active"' : '' %> >Breads</a>
-        <a href="">About</a>
         <% if (user) { %> 
             <a href="/logout">Log Out</a>
         <% } else { %>
