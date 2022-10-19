@@ -28,7 +28,7 @@ async function deleteReview(req, res) {
             "reviews.user": req.user._id
         })
         // console.log(bread); DELETE
-        //if statement true if bread is undefined
+        //if statement is true if bread is undefined
         if(!bread) return res.redirect("/breads");
         bread.reviews.remove(req.params.id);
         await bread.save();
@@ -47,5 +47,27 @@ function edit (req, res) {
 }
 
 function update(req, res) {
-    console.log("updating...");
+    const reviewId = req.params.id;
+    Bread.findOne({
+        "reviews_id": reviewId,
+        "reviews.user": req.user.id
+    })
+        .then(function(bread) {
+            //if statement is true if bread is undefined
+            if(!bread) return res.redirect("/breads");
+
+            for (const review of bread.reviews) {
+                if (review._id.equals(reviewId)) {
+                    review.content = req.body.content;
+                    review.rating = req.body.rating;
+                }
+            }
+            bread.save().then(function() {
+                res.redirect(`/breads/${bread._id}`);
+            })
+        })
+        .catch(function(err) {
+            console.log(err);
+            process.exit();
+        })
 }
