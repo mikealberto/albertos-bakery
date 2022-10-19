@@ -3,7 +3,9 @@ const router = express.Router();
 const reviewsCtrl = require("../controllers/reviews");
 const isLoggedIn = require("../config/auth");
 
+//isLoggedIn for that extra layer of security
 router.post("/breads/:id/reviews", isLoggedIn, reviewsCtrl.create);
+router.delete("/reviews/:id", isLoggedIn, reviewsCtrl.delete);
 
 module.exports = router;
 
