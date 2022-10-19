@@ -1,7 +1,7 @@
 const Bread = require("../models/bread");
 
 module.exports = {
-    create, delete: deleteReview
+    create, delete: deleteReview, edit, update
 }
 
 function create(req, res) {
@@ -40,5 +40,12 @@ async function deleteReview(req, res) {
 }
 
 function edit (req, res) {
-    res.render("breads/edit")
+    res.render( "reviews/edit", {
+        title: "Review Form Update",
+        reviewId: req.params.id
+    });
+}
+
+function update(req, res) {
+    console.log("updating...");
 }
