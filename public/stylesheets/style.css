@@ -1,10 +1,11 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #976b04;
 }
 
 a {
-  color: #00B7FF;
+  color: #ffffff;
 }
 
 #img-ab-logo {
@@ -19,4 +20,11 @@ a {
   width: auto;
   max-height: 30px;
   max-width: 30px;
+}
+
+.bread-image {
+  height:auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 300px;
 }
