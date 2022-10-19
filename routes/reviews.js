@@ -8,7 +8,8 @@ router.post("/breads/:id/reviews", isLoggedIn, reviewsCtrl.create);
 //delete functionality
 router.delete("/reviews/:id", isLoggedIn, reviewsCtrl.delete);
 //edit functionality
-router.get("/:id/edit", isLoggedIn, reviewsCtrl.edit);
+router.get("/reviews/:id/edit", isLoggedIn, reviewsCtrl.edit);
+//update functionality
+router.put("/reviews/:id", isLoggedIn, reviewsCtrl.update);
 
 module.exports = router;
-
