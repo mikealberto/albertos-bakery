@@ -30,3 +30,4 @@ Link to Bakery: [Alberto's Bakery](https://notyetdeployed.com)
 - Add a lot more styling to the webpage
 - Allow users to add pictures to their reviews
 - Have a view page dedicated to about rather than having it in the index
+- for each specific bread being viewed have each bread display
