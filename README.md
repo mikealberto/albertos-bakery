@@ -2,11 +2,12 @@
 
 ## 👨🏽‍🍳 About
 Alberto's Bakery is a family owned wholesale bread supplier located in Queens, NY. We have a wide variety of breads to meet any food establishment needs and provide quality bread at great prices. The purpose behind this website is so that you can leave a review if you have purchased a bread of ours or to check it out reviews to determine if you want Alberto's Bakery to be your wholesale bread supplier!
+
 ## 📸Screenshots
-![index-page]
-![bread-index-page]
-![bread-show-page]
-![review-edit-page]
+![index-page](https://github.com/mikealberto/albertos-bakery/blob/dev/public/images/webpage-screenshots/index-page.png)
+![bread-index-page](https://github.com/mikealberto/albertos-bakery/blob/dev/public/images/webpage-screenshots/breads-index-page.png)
+![bread-show-page](https://github.com/mikealberto/albertos-bakery/blob/dev/public/images/webpage-screenshots/bread-show-page.png)
+![review-edit-page](https://github.com/mikealberto/albertos-bakery/blob/dev/public/images/webpage-screenshots/reviews-edit-page.png)
 
 
 ## 💻TECHNOLOGIES USED:
