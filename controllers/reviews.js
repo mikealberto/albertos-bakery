@@ -27,7 +27,7 @@ async function deleteReview(req, res) {
             "reviews._id" : req.params.id,
             "reviews.user": req.user._id
         })
-        console.log(bread);
+        // console.log(bread); DELETE
         //if statement true if bread is undefined
         if(!bread) return res.redirect("/breads");
         bread.reviews.remove(req.params.id);
