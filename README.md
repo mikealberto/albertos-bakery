@@ -24,8 +24,10 @@ Link to Bakery: [Alberto's Bakery](https://notyetdeployed.com)
 - You will require a google account 
 - After being logged in and authenticated you will be able to make review, edit your reviews and delete your reviews on our breads
 - If you are not logged in you are still welcome to browse our breads and reviews
+- If you click the bakery logo it will route you to the homepage
 
 ## 📈Next Steps/Future Features
 - Add more bread variety
 - Add a lot more styling to the webpage
 - Allow users to add pictures to their reviews
+- Have a view page dedicated to about rather than having it in the index
