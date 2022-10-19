@@ -29,7 +29,7 @@
 
 <br>
 
-if (bread.reviews.length) {
+<% if (bread.reviews.length) { %>
     <table>
         <thead>
             <tr>
@@ -41,11 +41,20 @@ if (bread.reviews.length) {
                 <th></th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            <% bread.reviews.forEach(function(review) { %>
+                <tr>
+                    <td><img src="<%= review.userAvatar %>" alt="avatar" referrerpolicy="no-referrer"><%= review.userName %> </td>
+                    <td><%= review.createdAt.toLocaleDateString() %></td>
+                    <td><%= review.content %></td>
+                    <td><%= review.rating %></td>
+                </tr>
+            <% }); %>
+        </tbody>
     </table>
-} else {
-    <h5>No Reviews.</h5>
-}
+<% } else { %>
+    <h4>No Reviews.</h4>
+<% } %>
 
 
 <%- include("../partials/footer") %> 
