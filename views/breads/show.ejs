@@ -59,7 +59,7 @@
                     </td>
                     <td>
                         <% if (user && user._id.equals(review.user)) { %>
-                            <form action="/breads/<%= bread._id %>/edit ">
+                            <form action="/reviews/<%= review._id %>/edit ">
                                 <button type="submit">Edit</button>
                             </form>
                         <% } %>
