@@ -39,6 +39,8 @@
                 <th>Rating</th>
                 <!-- colm to delete review -->
                 <th></th>
+                <!-- colm to edit review -->
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -52,6 +54,13 @@
                         <% if (user && user._id.equals(review.user)) { %>
                             <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
                                 <button type="submit">Delete</button>
+                            </form>
+                        <% } %>
+                    </td>
+                    <td>
+                        <% if (user && user._id.equals(review.user)) { %>
+                            <form action="/breads/<%= bread._id %>/edit ">
+                                <button type="submit">Edit</button>
                             </form>
                         <% } %>
                     </td>
